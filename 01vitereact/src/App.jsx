@@ -1,10 +1,13 @@
 import Chai from "./chai";
 
 function App() {
+const username="dds is here";
+
   return (
     // <></> is fragment
     <>
-      <Chai />
+      <Chai  />
+      <p>Hii {username}</p>
     </>
   );
 }
