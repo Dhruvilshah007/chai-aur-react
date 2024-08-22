@@ -1,10 +1,12 @@
+import Chai from "./chai";
 
 function App() {
-  
-
   return (
-    <h1>Dhruvil Shah-Vitee</h1>
-  )
+    // <></> is fragment
+    <>
+      <Chai />
+    </>
+  );
 }
 
-export default App
+export default App;

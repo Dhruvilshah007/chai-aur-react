@@ -10,3 +10,7 @@ npm create vite@latest
 It doesnt comes with node_modules, extra testing libarires
 
 To install packages here write "npm i" here i is install
+
+--
+React is single page because it has one element root which is returned
+Component aways start with Capital letter
