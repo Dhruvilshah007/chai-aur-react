@@ -6,7 +6,7 @@ import "./App.css";
 //If anything is updated in UI than react will control it.
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(15);
 
   // let counter = 15;
 
@@ -16,7 +16,23 @@ function App() {
   // };
 
   const addValue = () => {
-    setCount(count < 20 ? count + 1 : 20);
+    // setCount(count < 20 ? count + 1 : 20);
+
+    //Asked in interview AFter counter +- question
+    //Here one onclick output wont be 19, as react sends this as a batch, Data is added in variable but at last is sended once in UI for update as batch
+    //Explanation:Since state updates are batched, all four setCount calls see the same count value, which is the initial value of count before any of the updates are processed. Let's say count is initially 15. All four setCount calls see count as 15, so each of them tries to set it to 16 (i.e., count + 1).
+    // However, React batches these updates and effectively only processes the last setCount(count + 1) call, resulting in count being updated to 16, not 19.
+
+    // setCount(count + 1);
+    // setCount(count + 1);
+    // setCount(count + 1);
+    // setCount(count + 1);
+
+    //If we want to achieve such thing either add counter+4 or below way
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const removeValue = () => {
